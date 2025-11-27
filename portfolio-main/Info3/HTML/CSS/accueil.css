@@ -1,0 +1,184 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Définit 3 colonnes de taille égale */
+    grid-template-areas:
+        "nav   nav   nav"
+        "about about about"
+        "competences experiences formations";
+    gap: 10px;
+}
+
+main>nav {
+    grid-area: nav;
+}
+
+#about {
+    grid-area: about;
+}
+
+#competences {
+    grid-area: competences;
+}
+
+#experiences {
+    grid-area: experiences;
+}
+
+/* --- Liste de la navigation interne --- */
+main nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Permet aux éléments de passer à la ligne si l'espace est insuffisant */
+
+    gap: 12px;
+    padding: 0;
+    margin: 20px 0;
+
+    list-style: none;
+}
+
+/* --- Liens de la navigation interne --- */
+main nav a {
+
+    display: inline-block;
+    padding: 6px 12px;
+
+    text-decoration: none;
+    /* Supprime le soulignement par défaut */
+    color: #fff;
+    font-weight: bold;
+    /* Texte en gras */
+
+    /****************************/
+    /* Couleurs & Arrière-plans */
+    /****************************/
+    background-color: #763988;
+    /* Couleur de fond  car pourquoi pas */
+    border-radius: 6px;
+
+    transition: transform 0.2s ease;
+    /* Animation fluide pour au survol */
+}
+
+/* --- Survol des liens de navigation interne --- */
+main nav a:hover {
+
+    background: linear-gradient(135deg, #4b0175, #ea00ff);
+    /* Dégradé appliqué au survol*/
+
+    transform: translateY(-3px) scale(1.05);
+    /* Soulève le lien et l’agrandit légèrement */
+}
+
+/* --- Focus (accessibilité) des liens de navigation interne --- */
+main nav a:focus {
+    outline: 3px solid #640457;
+    outline-offset: 2px;
+}
+
+/* --- Style général des sections --- */
+section {
+    margin: 20px auto;
+    padding: 0 15px;
+
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+section h2 {
+    font-size: 1.5rem;
+    color: #400c50;
+    /* Couleur car voilà */
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+
+    border-bottom: 2px solid #ddd;
+    /* Ligne sous le titre pour le séparer visuellement */
+}
+
+/* --- Paragraphes de section --- */
+section p {
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   Éléments de Contenu (Listes, Liens, Adresse)
+   ========================================================================== */
+
+/* --- Listes à puces (dans section) --- */
+section ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* --- Éléments de liste (dans section) --- */
+section li {
+    margin-bottom: 8px;
+}
+
+/* --- Liens (dans section) --- */
+section a {
+    color: #7a00cc;
+    /* Couleur bleue pour les liens */
+    text-decoration: none;
+    /* Supprime le soulignement par défaut */
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+
+.icon-about::before,
+.icon-competences::before,
+.icon-experiences::before,
+.icon-formations::before {
+    margin-right: 8px;
+    /* Espace entre l'icône et le texte du titre */
+}
+
+/* --- Icônes spécifiques (Emoji) --- */
+.icon-about::before {
+    content: "👤";
+}
+
+.icon-competences::before {
+    content: "💻";
+}
+
+.icon-experiences::before {
+    content: "📅";
+}
+
+.icon-formations::before {
+    content: "🎓";
+}
+
+/* --- Délais d'animation pour les sections --- */
+section:nth-of-type(2) {
+    animation-delay: 0.2s;
+    /* Décalage pour que cette section apparaisse après 0.2s */
+}
+
+section:nth-of-type(3) {
+    animation-delay: 0.4s;
+    /* Décalage pour que cette section apparaisse après 0.4s */
+}
+
+section:nth-of-type(4) {
+    animation-delay: 0.6s;
+    /* Décalage pour que cette section apparaisse après 0.6s */
+}
+
+/* --- Définition de l’animation fadeIn --- */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        /* Devient complètement visible */
+        transform: translateY(0);
+        /* Remonte à sa position normale */
+    }
+}

@@ -1,0 +1,222 @@
+
+body {
+    font-family: 'Comic Sans', Arial, sans-serif;
+    color: #222;
+    line-height: 1.5;
+    margin: 0;
+    background: linear-gradient(80deg, #f0b0fd 0%, #b9b9b9 100%);
+
+    transition: background 0.5s ease;
+}
+
+body>header {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background: linear-gradient(135deg, #a500e6, #3b0099);
+    border-bottom: 4px solid #000000;
+}
+
+/* --- Titre principal du Header (h1) --- */
+body>header h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    margin: 10px 0;
+}
+
+/* --- Figure dans le header --- */
+body>header figure {
+    margin: 0 auto 10px;
+}
+
+/* --- Image de profil --- */
+body>header img {
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid #460166;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body>header img:hover {
+    transform: scale(1.08) rotate(30deg);
+    /* Agrandissement léger et rotation */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Légende de l'image de profil --- */
+body>header figcaption {
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+/* --- Navigation principale (dans le header) --- */
+body>header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 10px 0 0;
+    list-style: none;
+}
+
+/* --- Liens de navigation principale (dans le header) --- */
+body>header nav a {
+    text-decoration: none;
+    color: #bfc5cb;
+    font-weight: bold;
+
+    padding: 6px 10px;
+    border-radius: 4px;
+
+    position: relative;
+    /* Permet de positionner des pseudo-éléments par rapport au lien */
+    overflow: hidden;
+    /* Masque tout ce qui dépasse du lien, utile pour l’animation de ::after */
+    transition: color 0.3s ease;
+    /* Rend le changement de couleur fluide lorsqu'il y a interaction */
+}
+
+body>header nav a:hover {
+    background-color: #ddd;
+    color: #333;
+}
+
+/* --- Barre animée sous le lien (pseudo-élément) --- */
+body>header nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: rgb(0, 0, 0);
+    transition: width 0.3s ease;
+}
+
+/* --- Effet sur le survol de la barre de navigation --- */
+body>header nav a:hover::after {
+    width: 100%;
+}
+
+/* --- Effet de clic sur l’élément li du header --- */
+body>header nav li:active {
+    transform: scale(0.9);
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* --- Titre principal du main (h1) --- */
+main>h1 {
+    text-align: center;
+    color: #000000;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+/* --- Sections et articles principaux du A propos--- */
+main>section,
+main>article {
+    margin: 0 auto 80px;
+    padding: 0 15px;
+}
+
+/* --- Titres de section et d'article (h2) --- */
+main>section h2,
+main>article h2 {
+    color: #6d19a5;
+    /* Couleur du titre (bleu foncé) */
+    font-size: 1.5em;
+    /* Taille du texte 1,5 fois la taille normale */
+}
+
+/* ==========================================================================
+   Pied de page (Footer)
+   ========================================================================== */
+footer {
+    /***************/
+    /* Typographie */
+    /***************/
+    color: #fff;
+    /* Texte en blanc */
+    text-align: center;
+    /* Centre le texte horizontalement */
+
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    padding: 20px;
+    /* Espace intérieur autour du contenu */
+
+    /****************************/
+    /* Couleurs & Arrière-plans */
+    /****************************/
+    background: linear-gradient(80deg, #4d1e5f, #180a40, #224c80, #50161e);
+    /* Dégradé diagonal combinant plusieurs tons de bleu foncé à clair */
+    background-size: 200% 200%;
+    /* Agrandit le gradient pour permettre le déplacement et créer l'animation visuelle */
+
+    /***************/
+    /* Transitions */
+    /***************/
+    transition: background-position 0.5s ease;
+    /* Rend le déplacement du gradient fluide sur 0.5 seconde */
+}
+
+footer:hover {
+    background-position: right bottom;
+    /* Déplace le gradient vers le coin inférieur droit au survol */
+}
+
+footer p {
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    margin: 0;
+    /* Supprime la marge par défaut autour du paragraphe */
+}
+
+/* --- Réseaux sociaux dans le footer --- */
+footer .socials {
+    /***********/
+    /* Flexbox */
+    /***********/
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    /**********************/
+    /* Boîte & Espacement */
+    /**********************/
+    margin-top: 15px;
+}
+
+footer .socials a {
+    /***************/
+    /* Typographie */
+    /***************/
+    font-size: 28px;
+    color: white;
+
+    /***************/
+    /* Transitions */
+    /***************/
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .socials a:hover {
+    /*******************/
+    /* Transformations */
+    /*******************/
+    transform: translateY(-3px) scale(1.2);
+
+    /************/
+    /* Couleurs */
+    /************/
+    color: #c300ff;
+    /* Changement de couleur au survol */
+}
